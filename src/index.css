@@ -1,13 +1,36 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url(https://fonts.googleapis.com/css?family=Heebo:100,200,300,regular,500,600,700,800,900);
+
+@layer base {
+  body{
+    @apply bg-white font-sans overflow-x-hidden;
+    font-family: 'Heebo', sans-serif;
+
+  }
+
+  header{
+    @apply fixed bg-white top-0 z-40 flex w-full justify-between items-center px-4 py-5 transition-all lg:px-10 lg:py-6 shadow-md
+  }
+  main{
+    margin-top: 100px;
+  }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@layer components{
+  .nav-link{
+    @apply capitalize font-semibold  relative hover:before:absolute hover:before:rounded-lg  hover:before:w-full hover:before:h-1 hover:before:-bottom-1 hover:before:left-0 hover:before:bg-primaryColor hover:transition-all hover:ease-in-out duration-300 lg:mr-6
+  }
+  .menuIcon{
+    @apply text-5xl  right-32 z-[100] cursor-pointer hover:rotate-180 transition-all ease-in-out duration-300
+  }
+
+  .input-form {
+    @apply bg-transparent outline-none text-sm border rounded p-2 placeholder:text-sm focus:text-sm focus:tracking-wider focus:border-black/30 text-gray-600
+  }
+
+  .btnLogin{
+    @apply w-fit outline outline-1 outline-primaryColor hover:bg-primaryColor my-10 px-8 py-2 rounded font-semibold
+  }
 }

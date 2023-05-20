@@ -1,0 +1,12 @@
+export { default as Card } from "./Card";
+export { default as Clients } from "./Clients";
+export { default as Footer } from "./Footer";
+export { default as HeroBanner } from "./HeroBanner";
+export { default as Layout } from "./Layout";
+export { default as Navbar } from "./Navbar";
+export { default as OurProgress } from "./OurProgress";
+export { default as Portfolio } from "./Portfolio";
+export { default as Service } from "./Service";
+export { default as Tech } from "./Tech";
+export { default as Testimonial } from "./Testimonial";
+export { default as TextTitle } from "./TextTitle";
