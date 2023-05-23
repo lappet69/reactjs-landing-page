@@ -5,7 +5,7 @@ module.exports = {
     extend: {
       colors: {
         primaryColor: "#FFCE07",
-        overlay: "rgba(255,255,255, 0.2)",
+        overlay: "rgba(255,255,255, 0.3)",
       },
       textShadow: {
         "2xl":

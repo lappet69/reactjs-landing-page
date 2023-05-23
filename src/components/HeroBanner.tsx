@@ -19,11 +19,11 @@ const HeroBanner = () => {
         </button>
       </div>
 
-      <div className="absolute w-[200%] h-full bg-overlay z-[1] "></div>
+      <div className="absolute w-full h-full bg-overlay z-[1] "></div>
       <img
         src={heroBanner}
         alt="banner"
-        className=" absolute w-[200%] md:relative md:max-w-xl lg:max-w-7xl md:w-full ml-auto h-full md:-mt-[13.5rem] lg:mt-0 md:object-contain object-cover  object-center-left"
+        className=" absolute max-w-full md:relative md:max-w-xl lg:max-w-7xl md:w-full ml-auto h-full md:-mt-[13.5rem] lg:mt-0 md:object-contain object-cover  object-center-left"
       />
     </div>
   );
