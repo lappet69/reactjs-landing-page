@@ -1,4 +1,6 @@
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import { SiWhatsapp } from "react-icons/si";
+import { Link } from "react-router-dom";
 import { Logo } from "../assets";
 
 const Footer = () => {
@@ -33,12 +35,12 @@ const Footer = () => {
               Jl. Jalur Sutera Barat, Alam Sutera, <br /> Kota Tangerang, Banten
               15143
             </p>
-            <p className="">
+            <Link to="https://wa.me/+628118893383" target="_blank">
               <strong>P:</strong> +62 81 1889 3383
-            </p>
-            <p className="">
+            </Link>
+            <Link to="mailto:info@albatech.id" target="_blank">
               <strong>E: </strong> info@albatech.id
-            </p>
+            </Link>
           </div>
         </div>
       </div>
@@ -49,6 +51,17 @@ const Footer = () => {
         <p className="text-xs text-gray-400">
           Privacy policy | Term of service
         </p>
+      </div>
+      <div className="flex flex-col gap-2 items-center justify-center fixed bottom-4 right-6">
+        <Link
+          to="https://api.whatsapp.com/send?phone=628118893383"
+          target="_blank"
+          className="bg-[#25D366] w-16 h-16 rounded-full flex justify-center relative"
+        >
+          <span className="h-full w-full bg-[#25D366] rounded-full animate-wiggle absolute"></span>
+          <SiWhatsapp className="text-white text-4xl self-center absolute" />
+        </Link>
+        <p className="text-center">Need Help ?</p>
       </div>
     </footer>
   );

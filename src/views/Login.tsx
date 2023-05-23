@@ -1,27 +1,28 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Logo, bgLogin } from "../assets";
+import Loader from "../components/Loader";
 import useAuth from "../hooks/useAuth";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { signIn, user } = useAuth();
+  const { signIn, user, loading } = useAuth();
   const navigate = useNavigate();
-
-  // const navigate = useNavigate();
+  useEffect(() => {
+    if (user) {
+      navigate("/profile");
+    }
+  }, [user]);
 
   const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     await signIn(email, password);
-    if (user) {
-      navigate("/profile");
-    }
   };
 
-  useEffect(() => {}, []);
-
-  return (
+  return loading ? (
+    <Loader />
+  ) : (
     <div className="flex flex-col h-screen bg-[#f4f4f4]  justify-center items-center">
       <div className="flex w-full max-w-5xl gap-5 justify-center p-12 rounded shadow-xl border bg-white relative">
         <img src={Logo} alt="logo" className="m-auto absolute top-4" />

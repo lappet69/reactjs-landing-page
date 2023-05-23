@@ -60,3 +60,16 @@ export const postData = async (url: string, data: any) => {
     .then((res) => res.json())
     .catch((err) => console.log(err));
 };
+
+export const fetchUser = (): any => {
+  const userInfoString = localStorage.getItem("user");
+  let userInfo: any = null;
+
+  if (userInfoString && userInfoString !== "undefined") {
+    userInfo = JSON.parse(userInfoString);
+  } else {
+    localStorage.clear();
+  }
+
+  return userInfo;
+};

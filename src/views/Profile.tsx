@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { MdLogout } from "react-icons/md";
-import { Navbar } from "../components";
+import { Footer, Navbar } from "../components";
 import Loader from "../components/Loader";
 import useAuth from "../hooks/useAuth";
 
@@ -28,6 +28,7 @@ const Profile = () => {
             <MdLogout className="text-3xl" /> logout
           </button>
         </div>
+        <Footer />
       </div>
     );
   }

@@ -18,6 +18,26 @@ module.exports = {
       backgroundPosition: {
         left: "left:30",
       },
+      keyframes: {
+        wiggle: {
+          " 100%": {
+            transform: "scale(2)",
+            opacity: 0,
+          },
+          20: {
+            opacity: 0,
+          },
+          0: {
+            opacity: 0,
+          },
+          "50%": { opacity: "0" },
+
+          "10%": { opacity: "0.5" },
+        },
+      },
+      animation: {
+        wiggle: "wiggle 3s  infinite linear",
+      },
     },
   },
   plugins: [require("tailwindcss-textshadow")],

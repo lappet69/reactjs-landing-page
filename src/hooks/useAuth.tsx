@@ -2,6 +2,7 @@ import { createContext, useContext, useEffect, useMemo, useState } from "react";
 import { redirect } from "react-router-dom";
 import { AuthProviderProps, IAuth, IUser } from "../interface";
 import { toastType } from "../utils/toast";
+import { fetchUser, postData } from "./useFetch";
 
 const AuthContext = createContext<IAuth>({
   user: null,
@@ -15,37 +16,39 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
   const [loading, setLoading] = useState<boolean>(false);
 
   useEffect(() => {
+    setUser(fetchUser());
     if (user) {
-      setUser(user);
+      redirect("/profile");
     } else {
-      setUser(null);
+      redirect("/");
     }
-  }, [user]);
+  }, []);
+
   const signIn = async (email: string, password: string) => {
     setLoading(true);
-    const response = await fetch("https://reqres.in/api/login", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email, password }),
-    })
-      .then((res) =>
-        res.json().then((data) => {
-          if (data.token) {
-            setUser(data);
-            redirect("/profile");
-          } else if (data.error) {
-            toastType.error(data.error);
-          }
-        })
-      )
-      .catch((err) => console.log(err))
-      .finally(() => setLoading(false));
-
-    return response;
+    const response = await postData("https://reqres.in/api/login", {
+      email,
+      password,
+    });
+    if (response.token) {
+      localStorage.setItem("user", JSON.stringify(response));
+      setUser(response);
+      redirect("/profile");
+      setTimeout(() => {
+        setLoading(false);
+      }, 300);
+    } else if (response.error) {
+      setTimeout(() => {
+        setLoading(false);
+      }, 300);
+      toastType.error(response.error);
+    }
   };
+
   const logout = () => {
-    redirect("/login");
+    localStorage.clear();
     setUser(null);
+    redirect("/login");
   };
 
   const memoValue = useMemo(() => {

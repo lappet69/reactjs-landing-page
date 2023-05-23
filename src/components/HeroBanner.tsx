@@ -7,7 +7,7 @@ const HeroBanner = () => {
         <p className=" md:bg-white  text-5xl lg:text-7xl py-5 font-bold flex md:w-fit md:pr-16 ">
           Build or scale up
         </p>
-        <p className="text-4xl lg:text-6xl tracking-wider md:bg-white pr-16 py-5">
+        <p className="text-4xl lg:text-6xl tracking-wider md:bg-white ,md:pr-16 py-5">
           your development team
         </p>
         <p className="text-2xl tracking-wider flex flex-col md:flex-row items-center gap-4 my-4">

@@ -20,8 +20,10 @@ const Navbar = () => {
       {/* mobile */}
       <div className="w-full flex px-6 items-center md:hidden justify-between z-30 relative">
         <div className="flex justify-between w-full items-center">
-          <img src={Logo} alt="logo" />
-          <div className="relative  ">
+          <Link to="/">
+            <img src={Logo} alt="logo" className="w-3/4 md:w-auto" />
+          </Link>
+          <div className="relative ">
             {!isOpen ? (
               <MdMenu onClick={() => setIsOpen(true)} className="menuIcon" />
             ) : (
@@ -30,28 +32,29 @@ const Navbar = () => {
                 className="menuIcon "
               />
             )}
-            <div className="absolute   w-screen -right-[2.5rem]  top-[70px] bg-white shadow-lg border-t transition-all ease-in-out duration-500">
-              {isOpen && (
-                <ul className="flex flex-col items-center  gap-5 my-8">
-                  {menuItems &&
-                    menuItems.map((menu, idx) => (
-                      <Link to={menu.path} key={idx} className={`nav-link`}>
-                        {menu.name}
-                      </Link>
-                    ))}
-                  <button className="rounded-full bg-primaryColor font-semibold px-6 py-3">
-                    Contact Us
-                  </button>
-                </ul>
-              )}
-            </div>
+            {isOpen && (
+              <ul className="flex absolute bg-white  flex-col items-center  gap-5 my-5 !w-screen -right-10 shadow-lg  transition ease-in-out duration-500 py-10 border-t">
+                {menuItems &&
+                  menuItems.map((menu, idx) => (
+                    <Link to={menu.path} key={idx} className={`nav-link`}>
+                      {menu.name}
+                    </Link>
+                  ))}
+                <button className="rounded-full bg-primaryColor font-semibold px-6 py-3">
+                  Contact Us
+                </button>
+              </ul>
+            )}
+            <div className="bg-red-400  "></div>
           </div>
         </div>
       </div>
 
       {/* desktop */}
       <div className="w-full hidden md:flex justify-between  md:px-12 lg:px-24">
-        <img src={Logo} alt="logo" />
+        <Link to="/">
+          <img src={Logo} alt="logo" />
+        </Link>
         <ul className=" flex  items-center  gap-5 ">
           {menuItems &&
             menuItems.map((menu, idx) => (
