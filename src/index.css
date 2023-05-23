@@ -31,6 +31,6 @@
   }
 
   .btnLogin{
-    @apply w-fit outline outline-1 outline-primaryColor hover:bg-primaryColor my-10 px-8 py-2 rounded font-semibold
+    @apply self-center md:self-end outline outline-1 outline-primaryColor hover:bg-primaryColor my-10 px-8 py-2 rounded font-semibold  md:w-fit
   }
 }
