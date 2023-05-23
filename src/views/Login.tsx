@@ -13,7 +13,7 @@ const Login = () => {
     if (user) {
       navigate("/profile");
     }
-  }, [user]);
+  }, [navigate, user]);
 
   const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();

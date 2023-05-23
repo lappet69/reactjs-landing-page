@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { createContext, useContext, useEffect, useMemo, useState } from "react";
 import { redirect } from "react-router-dom";
 import { AuthProviderProps, IAuth, IUser } from "../interface";
