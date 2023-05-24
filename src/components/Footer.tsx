@@ -52,7 +52,7 @@ const Footer = () => {
           Privacy policy | Term of service
         </p>
       </div>
-      <div className="flex flex-col gap-2 items-center justify-center fixed bottom-4 right-6">
+      <div className="flex flex-col gap-2 items-center justify-center fixed bottom-4 right-6 z-50">
         <Link
           to="https://api.whatsapp.com/send?phone=628118893383"
           target="_blank"

@@ -3,6 +3,8 @@ export { default as bgLogin } from "./bgLogin.svg";
 export { default as bgTetismonial } from "./bgTestimonial.svg";
 export { default as heroBanner } from "./heroBanner.png";
 export { default as portfolio1 } from "./portfolio/portfolio1.png";
+export { default as portfolio2 } from "./portfolio/portfolio2.jpg";
+export { default as portfolio3 } from "./portfolio/portfolio3.jpg";
 export { default as androidImg } from "./service/android.svg";
 export { default as cmsImg } from "./service/cms_dev.svg";
 export { default as digitalImg } from "./service/digital_product.svg";

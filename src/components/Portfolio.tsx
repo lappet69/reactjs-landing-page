@@ -1,4 +1,4 @@
-import { portfolio1 } from "../assets";
+import { portfolio1, portfolio2, portfolio3 } from "../assets";
 import TextTitle from "./TextTitle";
 
 interface IPortfolio {
@@ -23,14 +23,14 @@ const Portfolio = () => {
       product: "Website development",
       title: "Home and Living",
       desc: "Albatech helps in creating a website catalog to show brand identities and information in accordance with vision and mission of Home and Living",
-      img: "",
+      img: portfolio2,
     },
     {
       id: 3,
       product: "Website development",
       title: "Hippo",
       desc: "Albatech help to create e-commerce and company profile for Hippo's Website with realtime transactions and integration with Payment Gateway to accept multiple payment.",
-      img: "",
+      img: portfolio3,
     },
   ];
   return (
